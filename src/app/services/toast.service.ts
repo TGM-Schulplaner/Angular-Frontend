@@ -12,7 +12,7 @@ class Toast {
   providedIn: 'root'
 })
 export class ToastService {
-  toasts: Toast[];
+  toasts: Toast[] = [];
   defaultDelay = 5000;
   defaultAutoHide = false;
 
