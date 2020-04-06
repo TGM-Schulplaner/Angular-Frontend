@@ -1,1 +1,9 @@
+#toast-container {
+  float: right;
+  padding-top: .5rem;
+  padding-right: 1.5rem;
+}
 
+#toast-container > ngb-toast {
+  width: 110%;
+}

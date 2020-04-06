@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-import {SafeHtml} from '@angular/platform-browser';
-
-class Toast {
-  header: string;
-  body: string | SafeHtml;
-  delay?: number;
-  autoHide?: boolean;
-}
+import {Toast} from '../models/toast';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +12,11 @@ export class ToastService {
   constructor() { }
 
   show(header: string, body: string, delay?: number, autoHide?: boolean) {
-    this.toasts.push({ header, body, delay, autoHide });
+    this.showToast({ header, body, delay, autoHide });
+  }
+
+  showToast(toast: Toast) {
+    this.toasts.push(toast);
   }
 
   remove(toast) {
