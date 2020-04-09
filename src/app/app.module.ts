@@ -1,22 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { JwtInterceptor } from './helper/jwt.interceptor';
+import { ErrorInterceptor } from './helper/error.interceptor';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { LoginComponent } from './components/login/login.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {JwtInterceptor} from './helper/jwt.interceptor';
-import {ErrorInterceptor} from './helper/error.interceptor';
-import {AppRoutingModule} from './app-routing.module';
+import { ToastContainerComponent } from './components/toast-container/toast-container.component';
 import { HomeComponent } from './components/home/home.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ToastContainerComponent
   ],
   imports: [
     BrowserModule,

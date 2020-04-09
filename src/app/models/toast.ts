@@ -5,4 +5,7 @@ export class Toast {
   body: string | SafeHtml;
   delay?: number;
   autoHide?: boolean;
+  type?: ToastType;
 }
+
+export type ToastType = 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';

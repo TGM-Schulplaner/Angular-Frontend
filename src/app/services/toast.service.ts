@@ -11,8 +11,8 @@ export class ToastService {
 
   constructor() { }
 
-  show(header: string, body: string, delay?: number, autoHide?: boolean) {
-    this.showToast({ header, body, delay, autoHide });
+  show(header: string, body: string, delay?: number, autoHide?: boolean, type?: 'danger'|'warning'|'success'|'info') {
+    this.showToast({ header, body, delay, autoHide, type });
   }
 
   showToast(toast: Toast) {

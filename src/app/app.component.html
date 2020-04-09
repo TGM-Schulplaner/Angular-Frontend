@@ -1,12 +1,4 @@
-<div id="toast-container">
-  <ngb-toast
-    *ngFor="let toast of toastService.toasts"
-    [header]="toast.header"
-    [autohide]="toast.autoHide || toastService.defaultAutoHide"
-    [delay]="toast.delay || toastService.defaultDelay"
-    (hide)="toastService.remove(toast)"
-  >{{toast.body}}</ngb-toast>
-</div>
+<app-toast-container></app-toast-container>
 <!--Todo: Header-->
 <div>
   <!--Todo: Sidebar-->

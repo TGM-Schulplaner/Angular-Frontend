@@ -1,0 +1,24 @@
+@mixin toast-variant($background, $border, $color) {
+  color: $color;
+  @include gradient-bg($background);
+  border-color: $border;
+}
+
+$toast-bg-level:    -10 !default;
+$toast-border-level: -9 !default;
+$toast-color-level:   6 !default;
+
+@each $color, $value in $theme-colors {
+  .#{$color} {
+    .toast-header {
+      @include toast-variant(theme-color-level($color, $toast-bg-level + 2), theme-color-level($color, $toast-border-level + 2), theme-color-level($color, $toast-color-level + 2));
+    }
+    .toast-body {
+      @include toast-variant(theme-color-level($color, $toast-bg-level), theme-color-level($color, $toast-border-level), theme-color-level($color, $toast-color-level));
+    }
+  }
+}
+
+.toast {
+  width: 100%;
+}
