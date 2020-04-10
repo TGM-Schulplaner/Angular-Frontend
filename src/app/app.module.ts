@@ -5,20 +5,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { JwtInterceptor } from './helper/jwt.interceptor';
 import { ErrorInterceptor } from './helper/error.interceptor';
 import { AppRoutingModule } from './app-routing.module';
-
-import { AppComponent } from './app.component';
-import { ToastContainerComponent } from './components/toast-container/toast-container.component';
-import { HomeComponent } from './components/home/home.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HeaderComponent } from './components/Layout/header/header.component';
-import { LoginComponent } from './components/login/login.component';
-import { UserSearchComponent } from './components/user-search/user-search.component';
-import { SearchComponent } from './components/search/search.component';
-import {CommonModule} from '@angular/common';
+import {AppComponent} from './app.component';
+import {LoginComponent} from './components/login/login.component';
+import {ToastContainerComponent} from './components/common/toast-container/toast-container.component';
+import {HomeComponent} from './components/content/home/home.component';
+import {UserSearchComponent} from './components/common/user-search/user-search.component';
+import {SearchComponent} from './components/common/search/search.component';
+import {HeaderComponent} from './components/layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +25,7 @@ import {CommonModule} from '@angular/common';
     HomeComponent,
     ToastContainerComponent,
     UserSearchComponent,
-    SearchComponent
+    SearchComponent,
     HomeComponent,
     HeaderComponent
   ],
