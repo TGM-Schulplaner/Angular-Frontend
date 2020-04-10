@@ -1,0 +1,16 @@
+<div class="input-group col-md-5 mb-3">
+  <ng-component [innerHTML]="sanitizer.bypassSecurityTrustHtml(name)"></ng-component>
+  <div class="form-control" [class.is-invalid]="searchFailed && !searching">
+    <input type="text"
+           [id]="inputId"
+           [name]="inputId"
+           [(ngModel)]="model"
+           [ngbTypeahead]="searchInternal"
+           [inputFormatter]="inputFormatter"
+           [resultFormatter]="resultFormatter"
+           [editable]='false' />
+    <span *ngIf="searching" class="spinner-container">
+      <span class="spinner-border spinner-border-sm"></span>
+    </span>
+  </div>
+</div>
