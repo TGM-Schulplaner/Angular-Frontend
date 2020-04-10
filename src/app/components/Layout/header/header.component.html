@@ -1,0 +1,30 @@
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark px-3">
+  <!-- Logo -->
+  <a href="#" class="navbar-brand">TGM-Schulplaner</a>
+  <!-- Toggler -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarToggler"
+    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle
+    nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <ul class="navbar-nav ml-auto">
+      <!-- Suchleiste -->
+      <form class="form-inline">
+        <div class="md-form my-0">
+          <input class="form-control mr-sm-2" type="text"
+            placeholder="Suchen" aria-label="Search"
+            style="font-family: Arial, FontAwesome;">
+        </div>
+      </form>
+      <!-- User Icon -->
+      <li class="nav-item">
+        <a href="#" class="nav-link">Username
+          <fa-icon [icon]="userIcon" size="lg"></fa-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
