@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToastContainerComponent } from './components/toast-container/toast-container.component';
 import { HomeComponent } from './components/home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HeaderComponent } from './components/Layout/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserSearchComponent } from './components/user-search/user-search.component';
 import { SearchComponent } from './components/search/search.component';
@@ -26,6 +28,8 @@ import {CommonModule} from '@angular/common';
     ToastContainerComponent,
     UserSearchComponent,
     SearchComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
