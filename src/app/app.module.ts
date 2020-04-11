@@ -7,20 +7,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { JwtInterceptor } from './helper/jwt.interceptor';
-import { ErrorInterceptor } from './helper/error.interceptor';
 import { AppRoutingModule } from './app-routing.module';
-import {AppComponent} from './app.component';
-import {LoginComponent} from './components/common/login/login.component';
-import {ToastContainerComponent} from './components/common/toast-container/toast-container.component';
-import {HomeComponent} from './components/content/home/home.component';
-import {UserSearchComponent} from './components/common/user-search/user-search.component';
-import {SearchComponent} from './components/common/search/search.component';
-import {HeaderComponent} from './components/layout/header/header.component';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './components/common/login/login.component';
+import { ToastContainerComponent } from './components/common/toast-container/toast-container.component';
+import { HomeComponent } from './components/content/home/home.component';
+import { UserSearchComponent } from './components/common/user-search/user-search.component';
+import { SearchComponent } from './components/common/search/search.component';
+import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/Layout/sidebar/sidebar.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { ViewComponent } from './components/content/view/view.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
