@@ -20,6 +20,7 @@ import {HeaderComponent} from './components/layout/header/header.component';
 import { SidebarComponent } from './components/Layout/sidebar/sidebar.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { ViewComponent } from './components/content/view/view.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ViewComponent } from './components/content/view/view.component';
     HeaderComponent,
     SidebarComponent,
     NavbarComponent,
-    ViewComponent
+    ViewComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
