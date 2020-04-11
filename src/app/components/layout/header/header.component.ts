@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 /* FontAwesome Icons */
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+// import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import {User} from '../../../models/user';
+import {UserService} from '../../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +12,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent {
   userIcon = faUserCircle;
-  searchIcon = faSearch;
+  // searchIcon = faSearch;
+  get user(): User {
+    return this.userService.user;
+  }
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
+  logout() {
+    this.userService.logout();
+  }
 }

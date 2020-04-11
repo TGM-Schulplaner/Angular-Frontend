@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/content/home/home.component';
+import {ViewComponent} from './components/content/view/view.component';
+import {AuthGuard} from './guards/auth.guard';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'view',
+    component: ViewComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard]/*,
+    children: [
+      { path: 'todo', component: TodoComponent },
+      { path: 'calendar', component: CalendarComponent }
+    ]*/
+  },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];

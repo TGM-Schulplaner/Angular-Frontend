@@ -1,3 +1,9 @@
 .container {
   padding-bottom: 56px;
 }
+#user {
+  cursor: pointer;
+  &.dropdown-toggle::after {
+    display: none;
+  }
+}

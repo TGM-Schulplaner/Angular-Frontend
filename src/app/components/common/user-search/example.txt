@@ -1,0 +1,1 @@
+<app-user-search [name]="'<div class=\'input-group-prepend\'><div class=\'input-group-text\'>Search:</div></div>'"></app-user-search>

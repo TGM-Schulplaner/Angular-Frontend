@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Toast} from '../../../models/toast';
 import {ToastService} from '../../../services/toast.service';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-toast-container',
@@ -9,7 +10,7 @@ import {ToastService} from '../../../services/toast.service';
 })
 export class ToastContainerComponent {
 
-  constructor(private toastService: ToastService) { }
+  constructor(private toastService: ToastService) {}
 
   getToastHeader(toast: Toast) {
     return toast.header;

@@ -11,14 +11,15 @@ import { JwtInterceptor } from './helper/jwt.interceptor';
 import { ErrorInterceptor } from './helper/error.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import {AppComponent} from './app.component';
-import {LoginComponent} from './components/login/login.component';
+import {LoginComponent} from './components/common/login/login.component';
 import {ToastContainerComponent} from './components/common/toast-container/toast-container.component';
 import {HomeComponent} from './components/content/home/home.component';
 import {UserSearchComponent} from './components/common/user-search/user-search.component';
 import {SearchComponent} from './components/common/search/search.component';
 import {HeaderComponent} from './components/layout/header/header.component';
-import { ContentComponent } from './components/Layout/content/content.component';
 import { SidebarComponent } from './components/Layout/sidebar/sidebar.component';
+import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { ViewComponent } from './components/content/view/view.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,9 @@ import { SidebarComponent } from './components/Layout/sidebar/sidebar.component'
     SearchComponent,
     HomeComponent,
     HeaderComponent,
-    ContentComponent,
-    SidebarComponent
+    SidebarComponent,
+    NavbarComponent,
+    ViewComponent
   ],
   imports: [
     CommonModule,

@@ -1,33 +1,25 @@
-<div class="container-fluid">
-  <div class="row">
-    <!-- Sidebar -->
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column text-center">
-          <!-- Heading -->
-          <h5 class="pt-3">Ich</h5>
-          <hr class="mx-2 my-1">
-        </ul>
-        <!-- Gruppen -->
-        <h6 class="sidebar-heading d-flex justify-content-between
+<aside class="col d-none d-md-block bg-light">
+  <nav class="sidebar-sticky">
+    <ul class="nav flex-column text-center">
+      <!-- Heading -->
+      <li><h5 class="pt-3">Ich</h5></li>
+      <li><hr class="mx-2 my-1"></li>
+    </ul>
+    <!-- Gruppen -->
+    <h6 class="sidebar-heading d-flex justify-content-between
           align-items-center px-3 mt-2 mb-1 text-muted">
-          <span>Gruppen</span>
-        </h6>
-        <div class="nav flex-column mb-2 border-right">
-          <div class="list-group list-group-flush text-left">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Gruppe
-              1</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Gruppe
-              2</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Gruppe
-              3</a>
-            <button class="btn btn-primary btn-sm mx-3 mt-3 py-2">
-              <fa-icon [icon]="plusIcon"></fa-icon>
-              Gruppe hinzuf&uuml;gen
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
-</div>
+      <span>Gruppen</span>
+    </h6>
+    <div class="nav flex-column mb-2 border-right">
+      <ul class="list-group list-group-flush text-left">
+        <li *ngFor="let group of groups"><a href="#" class="list-group-item list-group-item-action bg-light">{{ group.name }}</a></li>
+        <li>
+          <button class="btn btn-primary btn-sm mx-3 mt-3 py-2" (click)="addGroup()">
+            <fa-icon [icon]="plusIcon"></fa-icon>
+            Gruppe hinzuf&uuml;gen
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</aside>

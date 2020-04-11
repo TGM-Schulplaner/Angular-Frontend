@@ -1,6 +1,11 @@
-app-toast-container {
+.toast-container {
   position: fixed;
-  top: 1.5rem;
+  top: 5rem;
   right: 1.5rem;
-  width: 20%;
+  min-width: 20%;
+  z-index: 1055;
+}
+
+.toast {
+  z-index: 1055;
 }
