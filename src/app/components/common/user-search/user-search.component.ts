@@ -1,6 +1,6 @@
 import {AfterContentInit, Component, ContentChild, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {User} from '../../models/user';
-import {UserService} from '../../services/user.service';
+import {User} from '../../../models/user';
+import {UserService} from '../../../services/user.service';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
 @Component({

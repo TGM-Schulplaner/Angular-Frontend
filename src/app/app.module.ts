@@ -17,6 +17,8 @@ import {HomeComponent} from './components/content/home/home.component';
 import {UserSearchComponent} from './components/common/user-search/user-search.component';
 import {SearchComponent} from './components/common/search/search.component';
 import {HeaderComponent} from './components/layout/header/header.component';
+import { ContentComponent } from './components/Layout/content/content.component';
+import { SidebarComponent } from './components/Layout/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {HeaderComponent} from './components/layout/header/header.component';
     UserSearchComponent,
     SearchComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContentComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
