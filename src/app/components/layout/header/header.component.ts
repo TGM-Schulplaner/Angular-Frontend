@@ -11,6 +11,7 @@ import {UserService} from '../../../services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  public isMenuCollapsed = true;
   userIcon = faUserCircle;
   // searchIcon = faSearch;
   get user(): User {

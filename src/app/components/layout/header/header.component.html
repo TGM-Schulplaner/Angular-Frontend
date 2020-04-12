@@ -1,26 +1,26 @@
 <header class="container-fluid navbar navbar-expand-sm navbar-dark bg-dark">
   <a routerLink="/" class="navbar-brand">TGM-Schulplaner</a>
   <!-- Toggler -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#navbarToggler"
-          aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle nav">
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed=
+    !isMenuCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarToggler">
+  <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
     <ul class="navbar-nav ml-auto">
       <!-- Suchleiste -->
       <li *ngIf="false">
         <form class="form-inline">
           <div class="md-form my-0">
             <input class="form-control mr-sm-2"
-                   type="text"
-                   placeholder="Suchen"
-                   aria-label="Search">
+              type="text"
+              placeholder="Suchen"
+              aria-label="Search">
           </div>
         </form>
       </li>
       <!-- User Icon -->
-      <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
+      <li class="nav-item" ngbDropdown display="dynamic"
+        placement="bottom-right">
         <a id="user" class="nav-link" ngbDropdownToggle>
           <ng-template #login>Login&nbsp;</ng-template>
           <span *ngIf="user else login">{{ user.name }}&nbsp;</span>
