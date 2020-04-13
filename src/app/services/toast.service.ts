@@ -14,8 +14,7 @@ export class ToastService {
   constructor() {
     this.source = new EventSource(environment.baseUrl + '/push');
     this.source.addEventListener('message', message => {
-      const data = JSON.parse(message.data);
-      this.show('Push Notification', data.text);
+      this.show('Push Notification', message.data);
     });
   }
 

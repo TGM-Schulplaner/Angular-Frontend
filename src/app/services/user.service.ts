@@ -29,6 +29,9 @@ export class UserService {
   }
 
   public get user(): User {
+    if (!environment.production) {
+      return User.DEV;
+    }
     if (this.loggedIn() && !this.userCache) {
       this.http.get<User>(environment.baseUrl + '/user').subscribe(value => {
         this.userCache = value;
