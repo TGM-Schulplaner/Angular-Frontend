@@ -44,8 +44,8 @@
         </a>
         <app-login *ngIf="!user" ngbDropdownMenu></app-login>
         <div *ngIf="user" ngbDropdownMenu>
-          <a ngbDropdownItem routerLink="view">Benutzer Ansicht</a>
-          <a ngbDropdownItem routerLink="settings">Einstellungen</a>
+          <a ngbDropdownItem routerLink="/view">Benutzer Ansicht</a>
+          <a ngbDropdownItem routerLink="/settings">Einstellungen</a>
           <div class="dropdown-divider"></div>
           <button ngbDropdownItem (click)="logout()">Logout</button>
         </div>

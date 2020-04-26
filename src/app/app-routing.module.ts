@@ -28,6 +28,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard]/*,
     children: [
+      { path: '', component: InfoComponent },
       { path: 'todo', component: TodoComponent },
       { path: 'calendar', component: CalendarComponent }
     ]*/

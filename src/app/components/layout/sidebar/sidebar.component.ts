@@ -16,6 +16,7 @@
 
 import { Component } from '@angular/core';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import {Group} from '../../../models/group';
 
 @Component({
   selector: 'app-sidebar',
@@ -25,10 +26,21 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 export class SidebarComponent {
 
   plusIcon = faPlusCircle;
-  groups: any[];
+  groups: Group[] = [];
 
   constructor() { }
 
   addGroup() {
+    this.groups.push(Group.debug(this.groups.length)); // add a debug group
+  }
+
+  setActive(group?: Group) {
+    if (group) {
+      // set active group
+      // set group view active
+    } else {
+      // clear active group
+      // set user view active
+    }
   }
 }

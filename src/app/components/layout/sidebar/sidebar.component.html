@@ -18,7 +18,7 @@
   <nav class="sidebar-sticky">
     <ul class="nav flex-column text-center">
       <!-- Heading -->
-      <li><h5 class="pt-3">Ich</h5></li>
+      <li><a (click)="setActive()" class="h5 pt-3">Ich</a></li>
       <li><hr class="mx-2 my-1"></li>
     </ul>
     <!-- Gruppen -->
@@ -28,7 +28,9 @@
     </h6>
     <div class="nav flex-column mb-2 border-right">
       <ul class="list-group list-group-flush text-left">
-        <li *ngFor="let group of groups"><a href="#" class="list-group-item list-group-item-action bg-light">{{ group.name }}</a></li>
+        <li *ngFor="let group of groups">
+          <a (click)="setActive(group)" class="list-group-item list-group-item-action bg-light">{{ group.name }}</a>
+        </li>
         <li>
           <button class="btn btn-primary btn-sm mx-3 mt-3 py-2" (click)="addGroup()">
             <fa-icon [icon]="plusIcon"></fa-icon>
