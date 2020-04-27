@@ -29,11 +29,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     children: [
-      { path: 'content/calendar', component: CalendarComponent }/*,
-      { TODO Path , TODO Component },
-      */
+      // { path: '', component: InfoComponent }, todo add InfoComponent
+      { path: 'calendar', component: CalendarComponent },
+      // { path: 'todo', component: TodoComponent } todo add TodoComponent
     ]
   },
+  // { path: '', component: AboutComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];
