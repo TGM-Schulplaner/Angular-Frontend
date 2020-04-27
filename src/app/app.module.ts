@@ -37,7 +37,7 @@ import { ViewComponent } from './components/content/view/view.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
-import { CalendarComponent } from './components/content/calendar/calendar.component';
+import { CalendarComponent } from './components/content/view/calendar/calendar.component';
 
 @NgModule({
   declarations: [

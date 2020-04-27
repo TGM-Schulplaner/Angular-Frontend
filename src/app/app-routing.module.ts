@@ -19,6 +19,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/content/home/home.component';
 import {ViewComponent} from './components/content/view/view.component';
 import {AuthGuard} from './guards/auth.guard';
+import { CalendarComponent } from './components/content/view/calendar/calendar.component';
 
 
 const routes: Routes = [
@@ -26,12 +27,12 @@ const routes: Routes = [
   { path: 'view',
     component: ViewComponent,
     canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard]/*,
+    canActivateChild: [AuthGuard],
     children: [
-      { path: '', component: InfoComponent },
-      { path: 'todo', component: TodoComponent },
-      { path: 'calendar', component: CalendarComponent }
-    ]*/
+      { path: 'content/calendar', component: CalendarComponent }/*,
+      { TODO Path , TODO Component },
+      */
+    ]
   },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
