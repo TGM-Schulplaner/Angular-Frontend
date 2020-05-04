@@ -21,14 +21,15 @@
          data-toggle="dropdown"
          role="button"
          aria-haspopup="true"
-         aria-expanded="false">
+         aria-expanded="false"
+         routerLink="/view/calendar">
         Kalender
       </a>
       <div class="dropdown-menu">
         <a *ngFor="let calendar of calendars"
            class="dropdown-item"
            (click)="setActiveCalendar(calendar)"
-           routerLink="/view/calendar">
+          >
           {{ calendar.name }}
         </a>
       </div>
