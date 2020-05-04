@@ -38,6 +38,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { CalendarComponent } from './components/content/view/calendar/calendar.component';
+import {FullCalendarModule} from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -55,16 +56,17 @@ import { CalendarComponent } from './components/content/view/calendar/calendar.c
     FooterComponent,
     CalendarComponent
   ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    NgbModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    FontAwesomeModule
-  ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        NgbModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        FontAwesomeModule,
+        FullCalendarModule
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
