@@ -77,7 +77,7 @@ class Options implements OptionsInput {
   // view
   initialView = 'dayGridMonth';
   headerToolbar = {
-    center: 'dayGridMonth timeGridWeek'
+    center: 'dayGridMonth,timeGridWeek'
   };
 
   themeSystem = 'bootstrap';
