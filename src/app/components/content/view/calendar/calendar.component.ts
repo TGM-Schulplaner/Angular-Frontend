@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -8,6 +8,7 @@ import EventApi from '@fullcalendar/core/api/EventApi';
 import ViewApi from '@fullcalendar/core/ViewApi';
 import deLocale from '@fullcalendar/core/locales/de';
 import {FullCalendarComponent} from '@fullcalendar/angular';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-calendar',
@@ -17,6 +18,7 @@ import {FullCalendarComponent} from '@fullcalendar/angular';
 export class CalendarComponent implements OnInit {
   calendarOptions: OptionsInput;
   @ViewChild('calendar') private calendarComponent: FullCalendarComponent;
+  private id: string; // todo add calendar id
 
   constructor() {
     this.calendarOptions = new Options(this.eventClicked);
@@ -24,9 +26,7 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit(): void {
     this.calendar.addEventSource({
-      events(info, successCallback, failureCallback) {
-        // events vom service holen https://fullcalendar.io/docs/v5/events-function
-      }
+      url: environment.baseUrl + '/calendar/' + this.id + '/entries'
     });
   }
 
