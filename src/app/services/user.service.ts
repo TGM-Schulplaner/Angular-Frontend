@@ -45,7 +45,7 @@ export class UserService {
   }
 
   public get user(): User {
-    if (!environment.production) {
+    if (environment.dev_mock_user) {
       return User.DEV;
     }
     if (this.loggedIn() && !this.userCache) {

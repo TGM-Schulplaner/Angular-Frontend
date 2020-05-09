@@ -15,5 +15,7 @@
  */
 
 export const environment = {
-  production: true
+  production: true,
+  dev_mock_user: false,
+  baseUrl: ''
 };

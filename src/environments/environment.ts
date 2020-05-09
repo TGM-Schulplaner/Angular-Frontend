@@ -20,6 +20,7 @@
 
 export const environment = {
   production: false,
+  dev_mock_user: true,
   baseUrl: 'http://localhost:8080/api/v1'
 };
 
