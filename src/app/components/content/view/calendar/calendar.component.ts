@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -9,27 +9,31 @@ import ViewApi from '@fullcalendar/core/ViewApi';
 import deLocale from '@fullcalendar/core/locales/de';
 import {FullCalendarComponent} from '@fullcalendar/angular';
 import {environment} from '../../../../../environments/environment';
-import { CustomButtonInput } from '@fullcalendar/core/types/input-types';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements AfterViewInit {
   calendarOptions: OptionsInput;
   @ViewChild('calendar') private calendarComponent: FullCalendarComponent;
-  private id: string; // todo add calendar id
+  private id = '57162059-91d4-11ea-9fd5-5048494f4e43'; // todo add calendar id
 
-  
-
-  constructor() {
+  constructor(private readonly http: HttpClient) {
     this.calendarOptions = new Options(this.eventClicked);
   }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    const http = this.http;
+    const id = () => this.id;
     this.calendar.addEventSource({
-      url: environment.baseUrl + '/calendar/' + this.id + '/entries'
+      events(info, successCallback, errorCallback) {
+        return http.get<any[]>(environment.baseUrl + '/calendar/' + id() + '/entries',
+          {params: {start: info.start.toISOString(), end: info.end.toISOString()}}).toPromise();
+      },
+      id: 'server'
     });
   }
 
@@ -54,14 +58,14 @@ type EventInfo = {
  */
 class Options implements OptionsInput {
   private readonly eventCallback: (event) => void;
+
   constructor(eventCallback: (event) => void) {
     this.eventCallback = eventCallback;
   }
 
-  height: "parent";
-  contentHeight: "auto";
+  height: 'parent';
+  contentHeight: 'auto';
   aspectRation = 1;
-  
 
   // locale
   locales = [ deLocale ];
@@ -91,7 +95,5 @@ class Options implements OptionsInput {
     info.jsEvent.preventDefault();
     this.eventCallback(info.event);
   }
-
-  
 }
 
