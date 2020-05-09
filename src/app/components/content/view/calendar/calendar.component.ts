@@ -9,6 +9,7 @@ import ViewApi from '@fullcalendar/core/ViewApi';
 import deLocale from '@fullcalendar/core/locales/de';
 import {FullCalendarComponent} from '@fullcalendar/angular';
 import {environment} from '../../../../../environments/environment';
+import { CustomButtonInput } from '@fullcalendar/core/types/input-types';
 
 @Component({
   selector: 'app-calendar',
@@ -19,6 +20,8 @@ export class CalendarComponent implements OnInit {
   calendarOptions: OptionsInput;
   @ViewChild('calendar') private calendarComponent: FullCalendarComponent;
   private id: string; // todo add calendar id
+
+  
 
   constructor() {
     this.calendarOptions = new Options(this.eventClicked);
@@ -55,6 +58,11 @@ class Options implements OptionsInput {
     this.eventCallback = eventCallback;
   }
 
+  height: "parent";
+  contentHeight: "auto";
+  aspectRation = 1;
+  
+
   // locale
   locales = [ deLocale ];
   locale = 'de';
@@ -65,8 +73,9 @@ class Options implements OptionsInput {
   // view
   initialView = 'dayGridMonth';
   headerToolbar = {
-    center: 'dayGridMonth,timeGridWeek'
+    center: 'dayGridMonth timeGridWeek'
   };
+
   themeSystem = 'bootstrap';
   bootstrapFontAwesome = {
     prev: 'fa-chevron-left',
@@ -82,5 +91,7 @@ class Options implements OptionsInput {
     info.jsEvent.preventDefault();
     this.eventCallback(info.event);
   }
+
+  
 }
 
