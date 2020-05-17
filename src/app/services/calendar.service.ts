@@ -25,12 +25,16 @@ export class CalendarService {
     };
   }
 
-  public eventClicked(info: EventClickInfo) {
+  public eventClicked(info: EventClickInfo): void {
     // event click handling
   }
 
-  public eventChanged(info: EventChangedInfo) {
+  public eventChanged(info: EventChangedInfo): void {
     // event change handling
+  }
+
+  public addEvent(): void {
+    // add event handling
   }
 }
 

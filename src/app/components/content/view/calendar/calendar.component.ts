@@ -17,10 +17,10 @@ import {environment} from '../../../../../environments/environment';
 export class CalendarComponent implements AfterViewInit {
   calendarOptions: OptionsInput;
   @ViewChild('calendar') private calendarComponent: FullCalendarComponent;
-  private id = () => '57162059-91d4-11ea-9fd5-5048494f4e43'; // todo add calendar id
+  private id = () => '57162059-91d4-11ea-9fd5-5048494f4e43'; // TODO add calendar id
 
   constructor(private readonly service: CalendarService) {
-    this.calendarOptions = new Options(service.eventClicked, service.eventChanged);
+    this.calendarOptions = new Options(service.eventClicked, service.eventChanged, service.addEvent);
   }
 
   ngAfterViewInit(): void {
@@ -34,15 +34,19 @@ export class CalendarComponent implements AfterViewInit {
  * The options for the calendar
  */
 class Options implements OptionsInput {
-  private readonly eventClickCallback: (event: EventClickInfo) => void;
-  private readonly eventChangeCallback: (arg: EventChangedInfo) => void;
-
-  constructor(eventClickCallback: (event: EventClickInfo) => void,
-              eventChangeCallback: (arg: EventChangedInfo) => void
+  constructor(private readonly eventClickCallback: (event: EventClickInfo) => void,
+              private readonly eventChangeCallback: (arg: EventChangedInfo) => void,
+              private readonly addEventCallback: () => void
   ) {
-    this.eventClickCallback = eventClickCallback;
-    this.eventChangeCallback = eventChangeCallback;
+    this.customButtons = {
+      addEventButton: {
+        text: 'Event Hinzufügen',
+        click: addEventCallback
+      }
+    };
   }
+
+  customButtons;
 
   height: 'parent';
   contentHeight: 'auto';
@@ -58,7 +62,7 @@ class Options implements OptionsInput {
   // view
   initialView = 'dayGridMonth';
   headerToolbar = {
-    center: 'dayGridMonth,timeGridWeek'
+    center: 'addEventButton dayGridMonth,timeGridWeek'
   };
 
   themeSystem = 'bootstrap';
