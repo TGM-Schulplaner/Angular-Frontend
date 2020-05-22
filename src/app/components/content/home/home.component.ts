@@ -25,5 +25,5 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class HomeComponent {
 
   constructor() { }
-
+  images = [944, 1011, 984].map((n) => "../../../../assets");
 }

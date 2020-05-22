@@ -13,4 +13,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-
+ .carousel-control-next-icon, .carousel-control-prev-icon {
+    filter: invert(1);
+  }
