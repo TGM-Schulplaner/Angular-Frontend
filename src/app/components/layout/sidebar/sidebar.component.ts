@@ -16,7 +16,8 @@
 
 import { Component } from '@angular/core';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import {Group} from '../../../models/group';
+import { Group } from '../../../models/group';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-sidebar',
@@ -28,10 +29,19 @@ export class SidebarComponent {
   plusIcon = faPlusCircle;
   groups: Group[] = [];
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
+
+  openModal(content) {
+    this.modalService.open(content, { centered: true });
+  }
 
   addGroup() {
     this.groups.push(Group.debug(this.groups.length)); // add a debug group
+    this.closeModal();
+  }
+
+  closeModal() {
+    this.modalService.dismissAll();
   }
 
   setActive(group?: Group) {

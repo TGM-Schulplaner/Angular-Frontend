@@ -38,6 +38,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { CalendarComponent } from './components/content/view/calendar/calendar.component';
+import { GroupComponent } from './components/content/view/group/group.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { CalendarComponent } from './components/content/view/calendar/calendar.c
     NavbarComponent,
     ViewComponent,
     FooterComponent,
-    CalendarComponent
+    CalendarComponent,
+    GroupComponent
   ],
   imports: [
     CommonModule,

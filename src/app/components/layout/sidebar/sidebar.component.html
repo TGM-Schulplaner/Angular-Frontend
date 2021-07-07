@@ -13,7 +13,6 @@
   ~    See the License for the specific language governing permissions and
   ~    limitations under the License.
   -->
-
 <aside class="col d-none d-md-block bg-light">
   <nav class="sidebar-sticky">
     <ul class="nav flex-column text-center">
@@ -23,25 +22,59 @@
           Ich
         </a>
       </li>
-      <li><hr class="mx-2 my-1"></li>
+      <li>
+        <hr class="mx-2 my-1">
+      </li>
     </ul>
     <!-- Gruppen -->
     <h6 class="sidebar-heading d-flex justify-content-between
-          align-items-center px-3 mt-2 mb-1 text-muted">
+      align-items-center px-3 mt-2 mb-1 text-muted">
       <span>Gruppen</span>
     </h6>
-    <div class="nav flex-column mb-2 border-right">
+    <div class="nav flex-column mb-2">
       <ul class="list-group list-group-flush text-left">
         <li *ngFor="let group of groups">
-          <a (click)="setActive(group)" class="list-group-item list-group-item-action bg-light" style="cursor: pointer">
+          <a (click)="setActive(group)" class="list-group-item
+            list-group-item-action bg-light" style="cursor: pointer">
             {{ group.name }}
           </a>
         </li>
         <li>
-          <button class="btn btn-primary btn-sm mx-3 mt-3 py-2" (click)="addGroup()">
+          <button class="btn btn-primary btn-sm mx-3 mt-3 py-2"
+            (click)="openModal(content)">
             <fa-icon [icon]="plusIcon"></fa-icon>
             Gruppe hinzuf&uuml;gen
           </button>
+          <!-- Modal to add group -->
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title">Gruppe hinzuf&uuml;gen</h4>
+              <button type="button" class="close" aria-label="Close"
+                (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <div class="form-group">
+                  <label for="groupname">Gruppenname</label>
+                  <input id="groupname" class="form-control" type="text"
+                    name="groupname">
+                </div>
+                <div class="form-group">
+                  <label for="description">Gruppenbeschreibung</label>
+                  <input id="description" class="form-control" type="text"
+                    name="description">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-primary"
+                (click)="addGroup()">Erstellen</button>
+              <button type="button" class="btn btn-light"
+                (click)="modal.close('Close click')">Schlie&szlig;en</button>
+            </div>
+          </ng-template>
         </li>
       </ul>
     </div>
